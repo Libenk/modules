@@ -35,6 +35,7 @@ def audio_to_text(audio_file):
         # Recognize speech using Google Web Speech API
         print("Converting audio to text...")
         text = recognizer.recognize_google(audio_data)
+        converter.text_to_speech(text,1)
         return text
 
     except sr.UnknownValueError:
