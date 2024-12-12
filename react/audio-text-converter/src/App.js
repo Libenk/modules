@@ -20,7 +20,7 @@ const App = () => {
     setLoading(true);
 
     try {
-      const response = await fetch("http://127.0.0.1:8000/text-to-audio/", {
+      const response = await fetch("https://coverters-c26f1d7e1762.herokuapp.com/text-to-audio/", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -72,7 +72,7 @@ const App = () => {
 
     setLoading(true);
     try {
-      const response = await fetch("http://127.0.0.1:8000/audio-to-text/", {
+      const response = await fetch("https://coverters-c26f1d7e1762.herokuapp.com/audio-to-text/", {
         method: "POST",
         body: formData,
       });
