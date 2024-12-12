@@ -3,7 +3,7 @@ from pydub import AudioSegment
 import text_to_speech as converter
 from pydub.utils import mediainfo
 import os
-#AudioSegment.converter = "C:/ffmpeg/bin/ffmpeg.exe"  # Replace with your actual ffmpeg path
+#AudioSegment.converter = "C:/ffmpeg/bin/ffmpeg.exe"  # Replace with your act1ual ffmpeg path
 #AudioSegment.ffprobe = "C:/ffmpeg/bin/ffprobe.exe"  # Replace with your actual ffprobe path
 
 def convert_audio_to_wav(input_file, output_file="converted_audio.wav"):
