@@ -17,6 +17,7 @@ from pydantic import BaseModel
 # Create the FastAPI app
 app = FastAPI()
 recognizer = sr.Recognizer()
+
 # Configure CORS middleware
 app.add_middleware(
     CORSMiddleware,
