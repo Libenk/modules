@@ -11,6 +11,7 @@ from starlette.middleware.cors import CORSMiddleware
 import shutil
 import os
 import speech_recognition as sr
+from fastapi.middleware.cors import CORSMiddleware
 from fastapi import FastAPI, File, UploadFile
 from fastapi.responses import JSONResponse
 from pydantic import BaseModel
@@ -18,14 +19,17 @@ from pydantic import BaseModel
 app = FastAPI()
 recognizer = sr.Recognizer()
 # Configure CORS middleware
+origins = [
+    "https://coverterfront-935eabdd6cb3.herokuapp.com"
+]
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["https://coverterfront-935eabdd6cb3.herokuapp.com/"],  # Allow only localhost:3000
-    allow_credentials=True,
-    allow_methods=["*"],  # Allow all HTTP methods
+    allow_origins=origins,  # List of allowed origins
+    allow_credentials=True,  # Allow cookies/credentials
+    allow_methods=["*"],  # Allow all HTTP methods (GET, POST, etc.)
     allow_headers=["*"],  # Allow all headers
 )
-
 # Pydantic model to handle input data for text-to-speech conversion
 class TextInput(BaseModel):
     text: str
