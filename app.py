@@ -22,7 +22,7 @@ recognizer = sr.Recognizer()
 # Configure CORS middleware
 
 origins = [
-    "https://coverterfront-935eabdd6cb3.herokuapp.com/",  # Allow only your frontend domain
+    "https://coverterfront-935eabdd6cb3.herokuapp.com/", "http://localhost:3000/" # Allow only your frontend domain
 ]
 app.add_middleware(
     CORSMiddleware,
