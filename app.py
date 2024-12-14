@@ -20,10 +20,9 @@ app = FastAPI()
 recognizer = sr.Recognizer()
 
 # Configure CORS middleware
-<<<<<<< HEAD
 
 origins = [
-    "https://coverterfront-935eabdd6cb3.herokuapp.com",  # Allow only your frontend domain
+    "https://coverterfront-935eabdd6cb3.herokuapp.com/",  # Allow only your frontend domain
 ]
 app.add_middleware(
     CORSMiddleware,
@@ -34,19 +33,6 @@ app.add_middleware(
 )
 
 
-=======
-origins = [
-    "https://coverterfront-935eabdd6cb3.herokuapp.com"
-]
-
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=origins,  # List of allowed origins
-    allow_credentials=True,  # Allow cookies/credentials
-    allow_methods=["*"],  # Allow all HTTP methods (GET, POST, etc.)
-    allow_headers=["*"],  # Allow all headers
-)
->>>>>>> bc602af32322bcb0f4529c1a62b51d5148daa494
 # Pydantic model to handle input data for text-to-speech conversion
 class TextInput(BaseModel):
     text: str
